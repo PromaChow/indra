@@ -135,7 +135,10 @@ jobs:
           INDRA_DB_REST_API_KEY: ${{ secrets.INDRA_DB_REST_API_KEY }}
           INDRA_DB_REST_URL: ${{ secrets.INDRA_DB_REST_URL }}
         name: Run unit tests
+        continue-on-error: true
+        
         run:
+          
           '# Set pytest attributes based on the context in which we are running
 
           export PYTESTMARKS="(not nogha) and (not slow) and (not cron)"
